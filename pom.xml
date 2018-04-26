@@ -16,6 +16,13 @@
         <module>eureka-consumer-ribbon</module>
         <module>eureka-consumer-feign</module>
         <module>config-server-git</module>
+        <module>config-client</module>
+        <module>eureka-consumer-ribbon-hystrix</module>
+        <module>hystrix-dashboard</module>
+        <module>turbine</module>
+        <module>turbine-amqp</module>
+        <module>api-gateway</module>
+        <module>stream-hello</module>
     </modules>
 
     <parent>

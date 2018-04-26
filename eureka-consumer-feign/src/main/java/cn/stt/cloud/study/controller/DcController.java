@@ -1,9 +1,9 @@
 package cn.stt.cloud.study.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.cloud.client.discovery.DiscoveryClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
+import cn.stt.cloud.study.service.DcClient;
 
 /**
  * @Author shitongtong
@@ -13,13 +13,10 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class DcController {
     @Autowired
-    private DiscoveryClient discoveryClient;
+    private DcClient dcClient;
 
-    @GetMapping("/dc")
-    public String dc() throws InterruptedException {
-//        Thread.sleep(1000 * 5);
-        String services = "Services:" + discoveryClient.getServices();
-        System.out.println(services);
-        return services;
+    @GetMapping("/consumer")
+    public String dc() {
+        return dcClient.consumer();
     }
 }
